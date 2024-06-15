@@ -249,7 +249,7 @@ def RoomManagementSystem():
     window.mainloop()
 
 # Hàm để kiểm tra đăng nhập. Link tham khảo: https://www.w3resource.com/python-exercises/tkinter/python-tkinter-basic-exercise-16.php
-def login(event):
+def login(event=None):
     username = username_entry.get()
     password = password_entry.get()
 
