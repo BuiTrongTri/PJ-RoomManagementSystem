@@ -98,13 +98,7 @@ def RoomManagementSystem():
         room_value = room.get()
         selected_room = treeview.selection()
 
-        if selected_room:
-            # Lấy giá trị của cột "ID"
-            item_room = treeview.item(selected_room[0])['text']  
-            index = int(item_room) - 1
-            del list_room[index]
-            messagebox.showinfo("Delete Room", f"Room with ID {item_room} has been deleted.")
-        elif room_value:
+        if room_value:
             is_exist = False
             for room_item in list_room:
                 if room_item.room_number == int(room_value):
@@ -115,6 +109,12 @@ def RoomManagementSystem():
                 
             if not is_exist:
                 messagebox.showinfo("Delete Room", f"Room Number {room_value} not found")
+        elif selected_room:
+            # Lấy giá trị của cột "ID"
+            item_room = treeview.item(selected_room[0])['text']  
+            index = int(item_room) - 1
+            del list_room[index]
+            messagebox.showinfo("Delete Room", f"Room with ID {item_room} has been deleted.")
         else:
             messagebox.showwarning("Delete Room", "Please select a room or enter a room number to delete.")
 
