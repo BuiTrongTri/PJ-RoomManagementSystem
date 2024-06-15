@@ -223,7 +223,7 @@ def RoomManagementSystem():
     reset_btn.grid(row=3, column=2, padx=20, pady=5)
     search_btn.grid(row=4, column=2, padx=20, pady=25)
 
-    # treeview link tham khảo: https://pythonassets.com/posts/treeview-in-tk-tkinter/
+    # tạo treeview. Link tham khảo: https://pythonassets.com/posts/treeview-in-tk-tkinter/
     treeview = ttk.Treeview(window, columns=("Room Number", "Capacity", "Status", "Price ($)"))
     treeview.heading("#0", text="ID")
     treeview.column("#0", width=50) 
@@ -244,8 +244,8 @@ def RoomManagementSystem():
     # chạy ứng dụng
     window.mainloop()
 
-# Hàm để kiểm tra đăng nhập link tham khảo: https://www.w3resource.com/python-exercises/tkinter/python-tkinter-basic-exercise-16.php
-def login():
+# Hàm để kiểm tra đăng nhập. Link tham khảo: https://www.w3resource.com/python-exercises/tkinter/python-tkinter-basic-exercise-16.php
+def login(event):
     username = username_entry.get()
     password = password_entry.get()
 
@@ -275,13 +275,13 @@ login_title_font = tkFont.Font(family="Helvetica", size=14, weight="bold")
 login_label_font = tkFont.Font(family="Helvetica", size=12)
 
 # Tạo label và entry cho username
-username_label = Label(login_window, text="Username:", bg="#ECE9D8", fg="black", font=login_label_font)
+username_label = Label(login_window, text="Username", bg="#ECE9D8", fg="black", font=login_label_font)
 username_label.pack(pady=5)
 username_entry = Entry(login_window, font=login_label_font)
 username_entry.pack(pady=5)
 
 # Tạo label và entry cho password
-password_label = Label(login_window, text="Password:", bg="#ECE9D8", fg="black", font=login_label_font)
+password_label = Label(login_window, text="Password", bg="#ECE9D8", fg="black", font=login_label_font)
 password_label.pack(pady=5)
 password_entry = Entry(login_window, show="*", font=login_label_font)  # show="*" để ẩn mật khẩu
 password_entry.pack(pady=5)
@@ -289,6 +289,9 @@ password_entry.pack(pady=5)
 # Tạo nút Login
 login_button = Button(login_window, text="Login", width=10, command=login, bg="#D4D0C8", fg="black", relief="raised", font=login_label_font)
 login_button.pack(pady=10)
+
+# Gắn sự kiện nhấn phím Enter vào Entry password_entry. Link tham khảo: https://python-forum.io/thread-25596.html
+password_entry.bind('<Return>', login)
 
 # Chạy cửa sổ đăng nhập
 login_window.mainloop()
