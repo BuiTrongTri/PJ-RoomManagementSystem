@@ -203,11 +203,11 @@ def RoomManagementSystem():
 
     # dán các widget lên window
     ## dán widget lable
-    room_lbl.grid(row=0, column=0, sticky="w", pady=5)
-    capacity_lbl.grid(row=1, column=0, sticky="w", pady=5)
-    status_lbl.grid(row=2, column=0, sticky="w", pady=5)
-    price_lbl.grid(row=3, column=0, sticky="w", pady=5)
-    search_lbl.grid(row=4, column=0, sticky="w", pady=25)
+    room_lbl.grid(row=0, column=0, sticky="e", pady=5)
+    capacity_lbl.grid(row=1, column=0, sticky="e", pady=5)
+    status_lbl.grid(row=2, column=0, sticky="e", pady=5)
+    price_lbl.grid(row=3, column=0, sticky="e", pady=5)
+    search_lbl.grid(row=4, column=0, sticky="e", pady=25)
 
     ## dán widget entry
     room.grid(row=0, column=1, sticky="w", pady=5)
