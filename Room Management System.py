@@ -86,12 +86,12 @@ def RoomManagementSystem():
             # tìm kiếm theo room_number
             if room_item.room_number == search_value:
                 is_exist = True
-                messagebox.showinfo("Search Room", f"Room Name: {room_item.room_number}, Capacity: {room_item.capacity}, Status: {room_item.status}, Price: {room_item.price}")
+                messagebox.showinfo("Search Room", f"Room Number: {room_item.room_number}, Capacity: {room_item.capacity}, Status: {room_item.status}, Price: {room_item.price}")
                 break
             
         # nếu không tìm thấy room_number
         if not is_exist:
-            messagebox.showinfo("Search Room", f"Room Name: {search_value} not found")
+            messagebox.showinfo("Search Room", f"Room Number: {search_value} not found")
 
     ## delete room
     def delete_room():
