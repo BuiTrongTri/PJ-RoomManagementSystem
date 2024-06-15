@@ -166,6 +166,7 @@ def RoomManagementSystem():
         search.delete(0, END)
 
     # Tạo font chữ tùy chỉnh
+    heading_font = tkFont.Font(family="Helvetica", size=10, weight="bold")
     title_font = tkFont.Font(family="Helvetica", size=18, weight="bold")
     label_frame_font = tkFont.Font(family="Helvetica", size=14, weight="bold")
     label_font = tkFont.Font(family="Helvetica", size=12)
@@ -224,6 +225,9 @@ def RoomManagementSystem():
     search_btn.grid(row=4, column=2, padx=20, pady=25)
 
     # tạo treeview. Link tham khảo: https://pythonassets.com/posts/treeview-in-tk-tkinter/
+    style = ttk.Style()
+    style.theme_use("default")
+    style.configure("Treeview.Heading", font=heading_font, background="#DDEBF7", foreground="black")
     treeview = ttk.Treeview(window, columns=("Room Number", "Capacity", "Status", "Price ($)"))
     treeview.heading("#0", text="ID")
     treeview.column("#0", width=50) 
