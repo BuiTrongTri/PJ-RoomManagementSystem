@@ -24,7 +24,7 @@ def RoomManagementSystem():
     # cập nhật treeview
     def populate_treeview():
         for i, room in enumerate(list_room, start=1):
-            tag = "odd" if i % 2 == 0 else "even"
+            tag = "even" if i % 2 == 0 else "odd"
             treeview.insert("", "end", text=str(i), values=(room.room_number, room.capacity, room.status, room.price), tags=(tag,))
 
     # mô tả các funtion cho ứng dụng
